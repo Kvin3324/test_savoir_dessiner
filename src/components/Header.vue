@@ -31,6 +31,14 @@ export default {
   .header {
     display: flex;
     justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    height: 104px;
+    width: 100vw;
+    background-color: white;
+    opacity: 1;
+    z-index: 2;
       &__left {
         display: flex;
         .header--logo {
