@@ -15,9 +15,9 @@
       :class="`about__${workshop.workshopName}`"
       :key="index"
     >
-      <div class="about__commerce--title">
+      <div class="about__title">
         <img :src="workshop.workshopTrace" alt="">
-        <h4>{{ workshop.workshopName }}</h4>
+        <h4>Atelier {{ workshop.workshopName }}</h4>
       </div>
         <p>{{ workshop.workshopAddress }}</p>
         <p>{{ workshop.workshopPhone }}</p>
@@ -61,5 +61,54 @@ export default {
 <style lang="scss" scoped>
   footer {
     background-color: black;
+    display: flex;
+    justify-content: space-around;
+    height: 402px;
+    align-items: center;
+    color: white;
+
+    .about__company {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+
+      img {
+        margin-bottom: 20px;
+      }
+
+      a {
+        margin-bottom: 10px;
+        text-decoration: none;
+        color: white;
+      }
+
+      &__medias {
+        img {
+          margin-right: 8px;
+        }
+      }
+    }
+
+    div {
+      .about__title {
+        display: flex;
+        align-items: center;
+
+        img {
+          margin-right: 10px;
+        }
+        h4 {
+          margin-bottom: 0;
+        }
+      }
+
+      p {
+        font-size: 14px;
+        margin: 0;
+        text-align: left;
+        margin-left: 26px;
+      }
+    }
   }
 </style>
