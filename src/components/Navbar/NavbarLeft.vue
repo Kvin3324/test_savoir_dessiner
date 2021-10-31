@@ -15,8 +15,9 @@
           <li class="nav-item">
             <a class="nav-link" href="#">La box</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item d-flex">
             <a class="nav-link">A propos</a>
+            <img src="../../assets/arrow_down.svg" alt="arrow-down">
           </li>
         </ul>
       </div>
