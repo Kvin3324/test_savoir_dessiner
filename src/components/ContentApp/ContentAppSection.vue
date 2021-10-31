@@ -122,7 +122,6 @@ export default {
               width: 8%;
             }
             p {
-              width: 45%;
               font-size: 20px;
             }
           }
@@ -151,7 +150,6 @@ export default {
               width: 8%;
             }
             p {
-              width: 45%;
               font-size: 20px;
             }
           }
