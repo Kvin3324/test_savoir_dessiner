@@ -23,11 +23,11 @@ export default {
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: var(--unnamed-font-family-jost-);
+  font-style: var(--unnamed-font-style-normal);
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  overflow-x: hidden;
 }
 </style>
