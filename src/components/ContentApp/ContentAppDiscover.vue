@@ -9,29 +9,31 @@
         </p>
       </div>
     </div>
-    <div class="discover__programs">
-      <div
-        class="card discover__programs--card"
-        v-for="(program, index) in programsArray"
-        :key="index"
-      >
-        <img :src="program.imgSrc" class="img--card">
+    <div class="discover__programs container-fluid">
+      <div class="row">
         <div
-          class="card--tags"
-        >
-        <div
-          v-for="(tag, index) in program.cardTags"
-          :class="`tag--${tag.tag}`"
+          class="card discover__programs--card col-10 col-md-8 col-xl-3 col-xxl-3 mb-2"
+          v-for="(program, index) in programsArray"
           :key="index"
         >
-          <img :src="tag.iconTag" alt="">
-          <span> {{ tag.name }} </span>
+          <img :src="program.imgSrc" class="img--card">
+          <div
+            class="card--tags"
+          >
+          <div
+            v-for="(tag, index) in program.cardTags"
+            :class="`tag--${tag.tag}`"
+            :key="index"
+          >
+            <img :src="tag.iconTag" alt="">
+            <span> {{ tag.name }} </span>
+          </div>
         </div>
-      </div>
-        <h4 class="card-title"> {{ program.title }} </h4>
-        <p class="card-text"> {{ program.description }} </p>
-        <div class="card--button">
-          <button type="button" class="btn"> {{ program.buttonName }} </button>
+          <h4 class="card-title"> {{ program.title }} </h4>
+          <p class="card-text"> {{ program.description }} </p>
+          <div class="card--button">
+            <button type="button" class="btn"> {{ program.buttonName }} </button>
+          </div>
         </div>
       </div>
     </div>
@@ -47,7 +49,7 @@ export default {
       type: Array,
       default: () => []
     }
-  }
+  },
 }
 </script>
 
@@ -123,4 +125,83 @@ export default {
       margin: 5% 0 10% 0;
     }
   }
+
+  @media screen and (max-width: 576px) {
+    .discover {
+      margin-top: 15%;
+      margin-bottom: 22%;
+      &__title {
+        background-size: 10%;
+        background-position: top;
+        h3 {
+          font-size: 22px;
+        }
+        .description--section {
+          p {
+            font-size: 15px;
+          }
+        }
+      }
+
+      .discover__programs {
+        div {
+          div {
+            margin: 0 8px;
+            h4 {
+              margin-top: 0;
+              font-size: 18px;
+            }
+            p {
+              margin: 0;
+              font-size: 12px;
+            }
+            .card--button {
+              margin-top: 2px;
+              button {
+                padding: 6px;
+                font-size: 13px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 712px) and (max-width: 1024px) {
+    .discover {
+      &__title {
+        background-position: left 48% top 23%;
+        background-size: 5%;
+      }
+
+      &__programs {
+        div {
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
+  }
+
+@media screen and (min-width: 1200px) {
+  .discover {
+    &__title {
+      background-size: 5%;
+      background-position: left 49% bottom 20%;
+    }
+    &__programs {
+      div {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        .card {
+          .card--button {
+            justify-content: flex-start;
+          }
+        }
+      }
+    }
+  }
+}
 </style>

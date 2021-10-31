@@ -1,26 +1,28 @@
 <template>
-  <footer>
-    <div class="about__company">
-      <img src="../assets/white_logo.svg" alt="white-logo">
-      <a href="mailto:info@savoirdessinerparis.fr">info@savoirdessinerparis.fr</a>
-      <div class="about__company__medias">
-        <img src="../assets/insta_icon.svg" alt="insta-icon">
-        <img src="../assets/fb_icon.svg" alt="fb-icon">
-        <img src="../assets/pinterest_cion.svg" alt="pinterest-icon">
-        <img src="../assets/yt_icon.svg" alt="yt-icon">
+  <footer class="container">
+    <div class="row">
+      <div class="about__company col">
+        <img src="../assets/white_logo.svg" alt="white-logo" class="white--logo">
+        <a href="mailto:info@savoirdessinerparis.fr">info@savoirdessinerparis.fr</a>
+        <div class="about__company__medias">
+          <img src="../assets/insta_icon.svg" alt="insta-icon">
+          <img src="../assets/fb_icon.svg" alt="fb-icon">
+          <img src="../assets/pinterest_cion.svg" alt="pinterest-icon">
+          <img src="../assets/yt_icon.svg" alt="yt-icon">
+        </div>
       </div>
-    </div>
-    <div
-      v-for="(workshop, index) in workshopsArr"
-      :class="`about__${workshop.workshopName}`"
-      :key="index"
-    >
-      <div class="about__title">
-        <img :src="workshop.workshopTrace" alt="">
-        <h4>Atelier {{ workshop.workshopName }}</h4>
+      <div
+        v-for="(workshop, index) in workshopsArr"
+        :class="`about__${workshop.workshopName} col`"
+        :key="index"
+      >
+        <div class="about__title">
+          <img :src="workshop.workshopTrace" alt="">
+          <h4>Atelier {{ workshop.workshopName }}</h4>
+        </div>
+          <p>{{ workshop.workshopAddress }}</p>
+          <p>{{ workshop.workshopPhone }}</p>
       </div>
-        <p>{{ workshop.workshopAddress }}</p>
-        <p>{{ workshop.workshopPhone }}</p>
     </div>
   </footer>
 </template>
@@ -108,6 +110,74 @@ export default {
         margin: 0;
         text-align: left;
         margin-left: 26px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    footer {
+      div {
+        .about__company {
+          .white--logo {
+            width: 42%;
+          }
+          a {
+            font-size: 12px;
+          }
+
+          &__medias {
+            display: flex;
+            img {
+              width: 14%;
+            }
+          }
+
+        }
+        div {
+          .about__title {
+            text-align: left;
+          }
+        }
+        div:nth-child(2) {
+          margin-bottom: 14px;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    footer {
+      margin: 0;
+      max-width: 100%;
+      div {
+        div {
+          .white--logo {
+            width: 90%;
+          }
+        }
+        .about__company__medias {
+          img {
+            margin-right: 2px;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    footer {
+      margin-top: 8%;
+      div {
+        width: 100%;
+        div {
+          .white--logo {
+            width: 46%;
+          }
+          div {
+            display: flex;
+            justify-content: flex-start;
+          }
+        }
       }
     }
   }
