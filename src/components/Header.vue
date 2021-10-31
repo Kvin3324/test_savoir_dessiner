@@ -1,19 +1,21 @@
 <template>
-  <div class="header">
-    <div class="header__left">
-      <div class="header--logo">
-        <img src="../assets/logo.svg" alt="logo">
+  <header>
+    <div class="header">
+      <div class="header__left">
+        <div class="header--logo">
+          <img src="../assets/logo.svg" alt="logo">
+        </div>
+        <div>
+          <navbar-left></navbar-left>
+        </div>
       </div>
-      <div>
-        <navbar-left></navbar-left>
+      <div class="header__right">
+        <div>
+          <navbar-right></navbar-right>
+        </div>
       </div>
     </div>
-    <div class="header__right">
-      <div>
-        <navbar-right></navbar-right>
-      </div>
-    </div>
-  </div>
+  </header>
 </template>
 
 <script>
@@ -35,7 +37,7 @@ export default {
     position: fixed;
     top: 0;
     height: 104px;
-    width: 100vw;
+    width: 100%;
     background-color: white;
     opacity: 1;
     z-index: 2;
