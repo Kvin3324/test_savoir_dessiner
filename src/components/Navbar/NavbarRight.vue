@@ -70,7 +70,7 @@ export default {
               background-color: #FFE401;
               color: black;
               font-weight: bold;
-              padding: 10px;
+              padding: 15px;
               border-radius: 10px;
             }
           }
@@ -78,11 +78,6 @@ export default {
       }
     }
   }
-
-  
-
- 
-
   .shop-item, .basket-item{
     border-right:1px solid #E8E8E8;
   }
